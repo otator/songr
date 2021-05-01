@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="song-style.css">
+  <script src="/webjars/jquery/jquery.min.js"></script>
+  <title>Songs</title>
+</head>
+
+<body>
+<header>
+  <ul id="menu">
+    <li><a href="/album">Albums</a></li>
+    <li><a href="/add-album">Add Album</a></li>
+    <li><a href="/songs">Songs</a></li>
+    <li><a href="/add-song">Add Song</a></li>
+  </ul>
+
+
+</header>
+<div class="container">
+  <div class="card" th:each="song: ${songs}">
+    <h3>Song Title: <span th:text=${song.title}></span></h3>
+    <h3>Album Title: <span th:text=${song.songAlbum.title}></span></h3>
+    <div class = "details-btn-container">
+      <form class="form-style" th:action="@{'/song-details/' + ${song.id}}" method="GET">
+        <button id="details-btn">Details</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

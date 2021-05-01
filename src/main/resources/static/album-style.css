@@ -1,0 +1,201 @@
+*{
+  margin:0;
+  padding:0;
+}
+h1, h3{
+  color:blue;
+  text-align: center;
+}
+/* #title{
+  text-align:center;
+} */
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+}
+img{
+width:250px;
+height:200px;
+margin: 10px 62px 10px 79px;;
+border-radius: 5px;
+}
+
+.card{
+  height: 400px;
+  width: 400px;
+  margin: 25px;
+  border-radius:10px;
+  box-shadow: 4px 3px 4px;
+  border: 1px solid black;
+}
+p{
+  text-align: center;
+  margin: 10px;
+}
+ul {
+  display: inline-grid;
+  list-style-type: none;
+  margin: 20px;
+  right: 0px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+}
+li{
+  display: inline;
+  font-size: 18px;
+}
+/* li:hover{
+  background-color: blue;
+  color: #ffffff;
+} */
+a:visited{
+  color: black;
+}
+li a{
+  padding: 10px;
+  text-decoration: none;
+}
+a:hover{
+  color: white;
+  background-color: blue;
+}
+
+span{
+  color: #000010;
+  font-weight: bold;
+}
+
+button{
+  background-color: blue;
+  color: white;
+  border-radius: 7px;
+  height: 40px;
+  width: 120px;
+  font-size: 18px;
+}
+.forms-container{
+  display: flex;
+  justify-content:space-around;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+
+.edit-btn{
+  /* background-color: red; */
+  width: 120px;
+}
+
+#form-container{
+  padding: 5px;
+  position: absolute;
+  height: 505px;
+  width: 380px;
+  background-image: url("assets/bg.jpg");
+  /* background-color: rgba(229, 234, 245, 0.479); */
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 5%);
+  border-radius: 10px;
+  padding-top: 15px;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+}
+/* 
+#form-container2{
+  padding: 5px;
+  position: absolute;
+  height: 300px;
+  width: 450px;
+  background-color: rgba(229, 234, 245, 0.479);
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 50%);
+  border-radius: 5px;
+} */
+
+label{
+  margin-left: 5px;
+}
+
+input{
+  display: block;
+  width: 300px;
+  height: 35px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#submit{
+  margin-left: 25%;
+  height: 45px;
+  background-color: blue;
+  color: white;
+  font-size: 18px;
+  width: 50%;
+}
+
+
+.label{
+  margin-left: 10%;
+  margin-top: 50px;
+  color: white;
+  font-size: 18px;
+}
+.input{
+  text-indent: 5px;
+  margin-left:10%;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.608);
+}
+
+input::placeholder{
+  text-indent: 5px;
+}
+
+.add-body{
+  background: url("https://thumbs.dreamstime.com/z/illustration-music-notes-background-168699926.jpg");
+  background-size: cover;
+}
+
+.card-x{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 200px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.forms-container{
+    margin-top: 10px;
+}
+
+#save-edits{
+margin-top: 35px;
+}
+.details-btn-container{
+    display:flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.song-card-container{
+    display:flex;
+    flex-wrap: wrap;
+    align-items:center;
+}
+
+.song-card{
+  width:310px;
+  height:150px;
+  margin: 25px;
+  border-radius:10px;
+  box-shadow: 4px 3px 4px;
+  border: 1px solid black;
+}

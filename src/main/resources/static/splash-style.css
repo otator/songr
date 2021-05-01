@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Devonshire);
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(https://camo.githubusercontent.com/3933a0d2aad5470e71089fba8c040820ff28b187/687474703a2f2f692e696d6775722e636f6d2f39394c70464d792e6a7067) fixed no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    color: red;
+    font-family: 'Devonshire';
+    font-size: 72px;
+}
+
+a {
+    font-size: 48px;
+    color: rgb(238, 255, 0);
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    cursor: pointer;
+    width: 250px;
+    height: 60px;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+a:visited{
+  color: rgb(238, 255, 0);
+}

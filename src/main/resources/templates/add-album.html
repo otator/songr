@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add Album</title>
+  <link rel="stylesheet" href="album-style.css">
+</head>
+
+<body class="add-body">
+  <header>
+    <ul id="menu">
+      <li><a href="/album">Albums</a></li>
+      <li><a href="/add-album">Add Album</a></li>
+      <li><a href="/songs">Songs</a></li>
+      <li><a href="/add-song">Add Song</a></li>
+    </ul>
+  </header>
+
+  <form id ="form-container" action="/album" method="POST">
+
+    <label class="label" for="title">Enter album name</label>
+    <input class="input" type="text" id="title" name="title" placeholder="Album name..." required>
+
+    <label class="label" for="artist">Enter artist name</label>
+    <input class="input" type="text" id="artist" name="artist" placeholder="Artist name..." required>
+
+    <label class="label" for="songCount">Enter song count</label>
+    <input class="input" type="text" id="songCount" name="songCount" placeholder="Song count..." required>
+
+    <label class="label" for="length">Enter album length</label>
+    <input class="input" type="text" id="length" name="length" placeholder="Album length..." required>
+
+    <label class="label" for="imageUrl">Enter Image Url</label>
+    <input class="input" type="text" id="imageUrl" name="imageUrl" placeholder="Album Image url..." required>
+    <input type="submit" value="Add Album" id="submit">
+
+  </form>
+
+</body>
+
+</html>
