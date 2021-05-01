@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/album-style.css">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+
+    <title>Album Details</title>
+</head>
+
+<body>
+    <header>
+        <ul id="menu">
+            <li><a href="/album">Albums</a></li>
+            <li><a href="/add-album">Add Album</a></li>
+            <li><a href="/songs">Songs</a></li>
+            <li><a href="/add-song">Add Song</a></li>
+        </ul>
+    </header>
+
+    <div class="card card-x">
+
+        <div class="album-container">
+            <img th:src=${albumDetails.imageUrl}>
+            <h3>Album Title: <span th:text=${albumDetails.title}></span></h3>
+            <p>Artist: <span th:text=${albumDetails.artist}></span></p>
+            <p>Length is: <span th:text=${albumDetails.length}></span> seconds</p>
+            <p>Songs Number is: <span th:text=${albumDetails.songCount}></span> songs</p>
+            <div class="buttons">
+                <button visible class="edit-btn">Edit</button>
+                <form class="form-style" th:action="@{'/delete-album/' + ${albumDetails.id}+ '?_method=delete'}"
+                    method="POST">
+                    <button id="delete-btn" class="delete-btn">Delete</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="forms-container">
+            <form id="edit-form" style="visibility:visible;" class="form-style"
+                th:action="'/edit-album/' + ${albumDetails.id} + '?_method=PUT'" method="POST">
+                <input th:value=${albumDetails.title} name="title" id="title" placeholder="title here..." required>
+                <input th:value=${albumDetails.artist} name="artist" id="artist" placeholder="artist here..." required>
+                <input th:value=${albumDetails.length} name="length" id="length" placeholder="length here..." required>
+                <input th:value=${albumDetails.songCount} name="songCount" id="songCount" placeholder="song count here..." required>
+                <input th:value=${albumDetails.imageUrl} name="imageUrl" id="imageUrl" placeholder="image url here..." required>
+                <button class="edit" type="submit" id="save-edits">Save Edits</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="song-card-container">
+        <div class="song-card" th:each="song: ${songs}">
+            <h3>Song Title: <span th:text=${song.title}></span></h3>
+            <h3>Album Title: <span th:text=${song.songAlbum.title}></span></h3>
+            <div class = "details-btn-container">
+                <form class="form-style" th:action="@{'/song-details/' + ${song.id}}" method="GET">
+                    <button id="details-btn">Details</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $('#edit-form').hide();
+            $('.edit-btn').click(function () {
+                $('#edit-form').fadeToggle(500);
+            })
+        });
+    </script>
+</body>
+
+</html>

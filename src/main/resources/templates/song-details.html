@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/song-style.css">
+  <script src="/webjars/jquery/jquery.min.js"></script>
+
+  <title>Song Details</title>
+</head>
+
+<body>
+<header>
+  <ul id="menu">
+    <li><a href="/album">Albums</a></li>
+    <li><a href="/add-album">Add Album</a></li>
+    <li><a href="/songs">Songs</a></li>
+    <li><a href="/add-song">Add Song</a></li>
+  </ul>
+</header>
+
+<div class="card card-x">
+
+  <div class="album-container">
+    <h3>Song Title: <span th:text=${songDetails.title}></span></h3>
+    <p>Length is: <span th:text=${songDetails.length}></span> seconds</p>
+    <p>Songs Track Number is: <span th:text=${songDetails.trackNumber}></span></p>
+    <p> Album is: <span th:text=${songDetails.songAlbum.title}></span></p>
+    <div class="buttons">
+      <button visible class="edit-btn">Edit</button>
+      <form class="form-style" th:action="@{'/delete-song/' + ${songDetails.id}+ '?_method=delete'}"
+            method="POST">
+        <button id="delete-btn" class="delete-btn">Delete</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="forms-container">
+    <form id="edit-form" style="visibility:visible;" class="form-style"
+          th:action="'/edit-song/' + ${songDetails.id} + '?_method=PUT'" method="POST">
+      <input th:value=${songDetails.title} name="title" id="title" placeholder="title here..." required>
+      <input th:value=${songDetails.length} name="length" id="length" placeholder="length here..." required>
+      <input th:value=${songDetails.trackNumber} name="trackNumber" id="trackNumber" placeholder="track number here..." required>
+      <button class="edit" type="submit" id="save-edits">Save Edits</button>
+    </form>
+  </div>
+</div>
+
+<script>
+        $(function () {
+            $('#edit-form').hide();
+            $('.edit-btn').click(function () {
+                $('#edit-form').fadeToggle(500);
+            })
+        });
+    </script>
+</body>
+
+</html>

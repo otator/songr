@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add Album</title>
+  <link rel="stylesheet" href="song-style.css">
+</head>
+
+<body class="add-body">
+<header>
+  <ul id="menu">
+    <li><a href="/album">Albums</a></li>
+    <li><a href="/add-album">Add Album</a></li>
+    <li><a href="/songs">Songs</a></li>
+    <li><a href="/add-song">Add Song</a></li>
+  </ul>
+</header>
+
+<form id ="form-container" action="/song" method="POST">
+
+  <label class="label" for="title">Enter song name</label>
+  <input class="input" type="text" id="title" name="title" placeholder="Song name..." required>
+
+
+  <label class="label" for="trackNumber">Enter track number</label>
+  <input class="input" type="text" id="trackNumber" name="trackNumber" placeholder="track number..." required>
+
+  <label class="label" for="length">Enter song length</label>
+  <input class="input" type="text" id="length" name="length" placeholder="Song length..." required>
+  <label class="label" for="albumId">Enter Album Id</label>
+  <input class="input" type="text" id="albumId" name="albumId" placeholder="Album id..." required>
+  <input type="submit" value="Add Song" id="submit">
+
+</form>
+
+</body>
+
+</html>
